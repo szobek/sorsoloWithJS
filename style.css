@@ -1,0 +1,104 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .raffle-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        
+        #raffle-display {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #007BFF;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid #e7e7e7;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            transition: all 0.2s ease;
+        }
+        
+        #raffle-display.spinning {
+            border-color: #007BFF;
+            box-shadow: 0 0 15px rgba(0, 123, 255, 0.3);
+        }
+
+        #raffle-display.winner {
+            border-color: #28a745;
+            color: #28a745;
+            animation: pop-in 0.5s ease;
+        }
+        
+        @keyframes pop-in {
+            0% { transform: scale(0.8); opacity: 0; }
+            80% { transform: scale(1.05); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        #draw-button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-bottom: 30px;
+        }
+
+        #draw-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        #draw-button:disabled {
+            background-color: #a0a0a0;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .remaining-words {
+            text-align: left;
+        }
+        
+        .remaining-words ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        .remaining-words li {
+            background-color: #f0f4f8;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
